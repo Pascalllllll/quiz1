@@ -338,6 +338,7 @@ body::before {
     .section-text {
         padding: 0;
         margin: 0 auto;
+        text-align: center;
     }
 
     .section-image {
@@ -356,7 +357,11 @@ body::before {
     .profile-sections {
         margin-left: 0;
         margin-top: 0;
+        padding: 0 15px;
+        /* kasih padding biar gak mentok kiri-kanan */
     }
+
+
 }
 
 @media (max-width: 600px) {
