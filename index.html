@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hosea Felix Sanjaya</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="img/avatar.png" />
+    <!-- Font dan icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Header kanan atas -->
+    <header class="top-right">
+        <a href="https://www.instagram.com/hoseafelix_/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://github.com/Pascalllllll" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/hosea-felix-sanjaya-3a9a0931b" target="_blank"><i
+                class="fab fa-linkedin"></i></a>
+        <span id="clock"></span>
+    </header>
+
+    <!-- Isi -->
+    <main class="center">
+        <h1 id="name" class="fade-text">HOSEA FELIX SANJAYA</h1>
+        <h2 id="ru" class="subtitle fade-text">Хосеа Феликс Санжая</h2>
+        <h2 id="jp" style="margin-top: -15px" class="subtitle fade-text">ホセア・フェリックス・サンジャヤ</h2>
+    </main>
+
+    <!-- Navbar bawah -->
+    <nav class="bottom-nav">
+        <a href="index.html">Home</a>
+        <a href="profile.html">Profile</a>
+        <a href="hometown.html">Hometown</a>
+        <a href="food.html">Food</a>
+        <a href="tourist.html">Travel</a>
+    </nav>
+
+    <!-- Script jam & animasi -->
+    <script>
+        // Jam realtime
+        function updateClock() {
+            const now = new Date();
+            let h = String(now.getHours()).padStart(2, "0");
+            let m = String(now.getMinutes()).padStart(2, "0");
+            let s = String(now.getSeconds()).padStart(2, "0");
+            document.getElementById("clock").textContent = `${h}:${m}:${s}`;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // Animasi fade
+        window.onload = () => {
+            const name = document.getElementById("name");
+            const ru = document.getElementById("ru");
+            const jp = document.getElementById("jp");
+
+            setTimeout(() => name.classList.add("show"), 500);
+            setTimeout(() => ru.classList.add("show"), 1500);
+            setTimeout(() => jp.classList.add("show"), 2500);
+        };
+
+        let lastX = 0, lastY = 0, lastTime = Date.now();
+    </script>
+</body>
+
+</html>
