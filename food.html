@@ -4,67 +4,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Local Food</title>
+    <title>Local Food - Hosea Felix Sanjaya</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="img/avatar.png">
-    <!-- Font dan icon -->
+    <!-- Font and icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <!-- Header kanan atas -->
+    <!-- Header top right -->
     <header class="top-right">
-        <a href="https://www.instagram.com/hoseafelix_/" target="_blank">
-            <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://github.com/Pascalllllll" target="_blank">
-            <i class="fab fa-github"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/hosea-felix-sanjaya-3a9a0931b" target="_blank">
-            <i class="fab fa-linkedin"></i>
-        </a>
+        <a href="https://www.instagram.com/hoseafelix_/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://github.com/Pascalllllll" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/hosea-felix-sanjaya-3a9a0931b" target="_blank"><i
+                class="fab fa-linkedin"></i></a>
         <span id="clock"></span>
     </header>
 
-    <!-- Isi -->
-    <main class="center">
-        <h1>HOSEA FELIX SANJAYA</h1>
-        <h2 class="subtitle">Хосеа Феликс Санжая<br>ホセア・フェリックス・サンジャヤ</h2>
+    <!-- Local Food Sections -->
+    <main class="profile-sections">
+        <!-- Local Foods -->
+        <section class="section fade-text">
+            <div class="section-text">
+                <h2>Favorite <span
+                        style="background-color:#31c5cf9d; color: #fff; padding: 5px; border-radius: 10px;">Local
+                        Foods</span>
+                </h2>
+                <p>
+                    My favorite local foods so far...
+                </p>
+                <div class="zigzag-container">
+                    <div class="zigzag-box">🥞 Martabak</div>
+                    <div class="zigzag-box">🍚 Nasi Goreng</div>
+                    <div class="zigzag-box">🍜 Mie Ayam</div><br>
+                    <div class="zigzag-box">🥣 Bakso</div>
+                    <div class="zigzag-box">🍲 Soto Soup</div>
+                    <div class="zigzag-box">🍢 Satay</div>
+                </div>
+            </div>
+
+            <!-- Gallery -->
+            <div class="food-gallery food-image">
+                <img src="img/martabak.jpg" alt="Martabak">
+                <img src="img/nasigoreng.jpg" alt="Nasi Goreng">
+                <img src="img/mieayam.jpg" alt="Mie Ayam">
+                <img src="img/bakso.jpg" alt="Bakso">
+                <img src="img/soto.jpg" alt="Soto Soup">
+                <img src="img/sate.jpg" alt="Satay">
+            </div>
+        </section>
+
+        <!-- Dream Foods -->
+        <section class="section fade-text">
+            <div class="section-text">
+                <h2>Dream <span
+                        style="background-color:#31c5cf9d; color:#fff; padding:5px; border-radius:10px;">Foods</span>
+                </h2>
+                <p>
+                    Here are some international dishes I dream of trying someday.
+                </p>
+                <div class="zigzag-container">
+                    <div class="zigzag-box">🍖 Tonkatsu</div>
+                    <div class="zigzag-box">🍗 Turkey Leg</div>
+                    <div class="zigzag-box">🥩 Beef Stroganoff</div>
+                    <div class="zigzag-box">🍛 Nasi Kandar</div>
+                    <div class="zigzag-box">🥙 Shawarma</div>
+                    <div class="zigzag-box">🥣 Borscht</div>
+                </div>
+            </div>
+
+            <!-- Food Gallery -->
+            <div class="section-image food-gallery1">
+                <img src="img/tonkatsu.jpg" alt="Tonkatsu">
+                <img src="img/turkeyleg.jpg" alt="Turkey Leg">
+                <img src="img/stroganoff.jpg" alt="Beef Stroganoff">
+                <img src="img/nasikandar.jpg" alt="Nasi Kandar">
+                <img src="img/shawarma.jpg" alt="Shawarma">
+                <img src="img/borscht.jpg" alt="Borscht">
+            </div>
+        </section>
+
     </main>
 
-    <!-- Navbar bawah -->
+    <!-- Bottom Navbar -->
     <nav class="bottom-nav">
         <a href="index.html">Home</a>
         <a href="profile.html">Profile</a>
         <a href="hometown.html">Hometown</a>
-        <a href="food.html">Food</a>
+        <a href="food.html" class="active">Food</a>
         <a href="tourist.html">Travel</a>
     </nav>
 
-    <!-- jam -->
+    <!-- Clock + Animation -->
     <script>
         function updateClock() {
             const now = new Date();
-            let hours = now.getHours();
-            let minutes = now.getMinutes();
-            let seconds = now.getSeconds();
-            if (hours < 10) {
-                hours = "0" + hours;
-            }
-            if (minutes < 10) {
-                minutes = "0" + minutes;
-            }
-            if (seconds < 10) {
-                seconds = "0" + seconds;
-            }
-            const timeString = hours + ":" + minutes + ":" + seconds;
-            document.getElementById("clock").textContent = timeString;
+            let h = String(now.getHours()).padStart(2, "0");
+            let m = String(now.getMinutes()).padStart(2, "0");
+            let s = String(now.getSeconds()).padStart(2, "0");
+            document.getElementById("clock").textContent = `${h}:${m}:${s}`;
         }
         setInterval(updateClock, 1000);
         updateClock();
-    </script>
 
+        // Scroll fade animation
+        const sections = document.querySelectorAll('.section');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, { threshold: 0.5 });
+
+        sections.forEach(sec => observer.observe(sec));
+    </script>
 </body>
 
 </html>
