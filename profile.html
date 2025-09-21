@@ -27,7 +27,9 @@
         <!-- About Me -->
         <section class="section fade-text">
             <div class="section-text">
-                <h2>About Me</h2>
+                <h2>About <span
+                        style="background-color:#ff73c59d; color: #fff; padding: 5px; border-radius: 10px;">Me</span>
+                </h2>
                 <p>
                     Hello! My name is <span class="zigzag-inline"> <strong>Hosea Felix Sanjaya</strong>.</span>
                     I am currently pursuing my studies at <strong>Institut Teknologi Sepuluh Nopember (ITS)
@@ -41,7 +43,7 @@
                     Beyond academics, I love working on collaborative projects that mix creativity with technical depth.
                 </p>
             </div>
-            <div class="section-image">
+            <div class="section-image avatar-image">
                 <img src="img/avatar.jpg" alt="About Me">
             </div>
         </section>
@@ -62,7 +64,8 @@
                     <div class="zigzag-box">🍽️ Culinary</div>
                     <div class="zigzag-box">📱 Doomscrolling</div>
                     <div class="zigzag-box">🎯 Puzzle</div>
-                    <div class="zigzag-box">▶️ YouTube</div>
+                    <div class="zigzag-box"
+                        onclick="window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank')">▶️ YouTube</div>
                     <div class="zigzag-box">🎬 Netflix</div>
                     <div class="zigzag-box">💪 Gym</div>
                     <div class="zigzag-box">🛍️ Shopping</div>
@@ -102,9 +105,14 @@
 
                 <h3>Soft Skills</h3>
                 <div class="zigzag-container">
-                    <div class="zigzag-box">Environmental Analysis</div>
-                    <div class="zigzag-box">Emotion Prediction</div>
-                    <div class="zigzag-box">Remote Observation</div>
+                    <div class="zigzag-box">Time Management</div>
+                    <div class="zigzag-box">Adaptability</div>
+                    <div class="zigzag-box">Empathy</div>
+                    <div class="zigzag-box">Work Ethic</div>
+                    <div class="zigzag-box">Negotiation</div>
+                    <div class="zigzag-box">Networking</div>
+                    <div class="zigzag-box">Creativity</div>
+                    <div class="zigzag-box">Persuasion</div>
                 </div>
             </div>
             <div class="section-image gallery-zigzag">
@@ -147,6 +155,8 @@
         }, { threshold: 0.5 });
 
         sections.forEach(sec => observer.observe(sec));
+
+
     </script>
 </body>
 
