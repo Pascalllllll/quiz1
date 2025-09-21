@@ -29,7 +29,7 @@ body::before {
     background-size: 40px 40px;
     animation: boxPop 17s ease-in-out infinite, boxColor 10s linear infinite;
     z-index: -1;
-    opacity: 0.6;
+    opacity: 0.7;
     filter: blur(0.2px);
 }
 
@@ -132,12 +132,12 @@ body::before {
     bottom: 25px;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(20, 20, 20, 0.8);
+    background: rgba(20, 20, 20, 0.705);
     color: white;
-    padding: 20px 55px;
-    border-radius: 40px;
+    padding: 10px 20px;
+    border-radius: 30px;
     display: flex;
-    gap: 35px;
+    gap: 15px;
     align-items: center;
     font-size: 0.9rem;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
@@ -146,18 +146,23 @@ body::before {
     font-weight: 700;
     background-image: radial-gradient(#00000060 1px, transparent 1px);
     background-size: 7px 7px;
+    backdrop-filter: blur(3px);
 }
 
 .bottom-nav a {
     text-decoration: none;
     color: white;
+    padding: 12px 12px;
+    /* kasih padding default */
+    border-radius: 40px;
     transition: 0.3s ease;
 }
 
 .bottom-nav a:hover {
-    color: #f1ba61;
-    transform: scale(1.1);
+    background-color: #11111146;
+    /* jangan ubah padding di sini, biar ukurannya tetap */
 }
+
 
 /* ========================
    Animations
@@ -182,14 +187,19 @@ body::before {
     animation: fadeDown 1s ease forwards;
 }
 
+
+
 /* ========================
    Profile Sections
 ======================== */
 .profile-sections {
     overflow-y: auto;
     scroll-behavior: smooth;
-    margin-left: 200px;
-    margin-top: -100px;
+    margin: 0 auto;
+    /* center */
+    padding: 0 40px;
+    max-width: 1200px;
+    margin-top: -70px;
 }
 
 .section {
@@ -197,15 +207,15 @@ body::before {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 60px 80px;
+    padding: 60px 40px;
     gap: 40px;
     flex-wrap: wrap;
-    /* supaya responsif */
 }
 
 .section-text {
     flex: 1;
-    padding-left: 80px;
+    padding: 0;
+    text-align: left;
 }
 
 .section-text h2 {
@@ -241,7 +251,7 @@ body::before {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 150px;
+    margin: 0;
 }
 
 .section-image img {
@@ -255,6 +265,96 @@ body::before {
 
 .section-image img:hover {
     transform: scale(1.1);
+}
+
+/* ========================
+   Responsive
+======================== */
+
+/* Laptop medium */
+@media (max-width: 1200px) {
+    .profile-sections {
+        padding: 0 30px;
+    }
+
+    .section {
+        padding: 50px 30px;
+    }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .section {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+        margin-top: 150px;
+    }
+
+    .section-text {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .section-image {
+        margin: 20px auto 0;
+    }
+
+    .section-image.avatar-image{
+        margin-top: -1000px;
+    }
+
+    .section-image.hometown-image{
+        margin-top: -1300px;
+    }
+
+    .section-image img {
+        max-width: 220px;
+        max-height: 220px;
+    }
+
+    .gallery-zigzag {
+        margin: 0 auto;
+    }
+
+    .profile-sections {
+        padding: 0 20px;
+    }
+}
+
+/* HP */
+@media (max-width: 600px) {
+    .section {
+        margin-top: 120px;
+    }
+
+    .section-text h2 {
+        font-size: 2rem;
+    }
+
+    .section-text p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .section-image img {
+        max-width: 180px;
+        max-height: 180px;
+    }
+
+    .section-image.avatar-image{
+        margin-top: -1300px;
+    }
+
+    .section-image.hometown-image{
+        margin-top: -1500px;
+    }
+
+    .bottom-nav {
+        padding: 12px 20px;
+        gap: 18px;
+        font-size: 0.8rem;
+    }
 }
 
 /* ========================
@@ -296,8 +396,9 @@ body::before {
     justify-content: center;
     gap: 25px;
     max-width: 420px;
+    margin: 0 auto;
     position: relative;
-    margin-right: 200px;
+    margin-top: 50px;
 }
 
 .gallery-zigzag img {
@@ -330,7 +431,7 @@ body::before {
 }
 
 .gallery-zigzag img:hover {
-    transform: scale(1.15) rotate(0deg);
+    transform: scale(1.3) rotate(0deg);
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
 }
 
@@ -338,6 +439,7 @@ body::before {
     display: inline-block;
     padding-left: 12px;
     padding-right: 10px;
+    padding-top: 2px;
     font-size: 1em;
     border-radius: 10px;
     background: #f0f2f385;
@@ -349,63 +451,34 @@ body::before {
     color: #fff;
 }
 
-/* ========================
-   Responsive
-======================== */
-@media (max-width: 900px) {
-    .section {
-        flex-direction: column;
-        text-align: center;
-        padding: 40px 20px;
-    }
-
-    .section-text {
-        padding: 0;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .section-image {
-        margin: 20px auto 0;
-    }
-
-    .section-image img {
-        max-width: 220px;
-        max-height: 220px;
-    }
-
-    .gallery-zigzag {
-        margin-right: 0;
-    }
-
-    .profile-sections {
-        margin-left: 0;
-        margin-top: 0;
-        padding: 0 15px;
-        /* kasih padding biar gak mentok kiri-kanan */
-    }
-
-
+.zigzag-inline1 {
+    display: inline-block;
+    padding-left: 12px;
+    padding-right: 10px;
+    padding-top: 2px;
+    font-size: 1em;
+    border-radius: 10px;
+    background: #f0f2f385;
+    transition: all 0.3s ease;
 }
 
-@media (max-width: 600px) {
-    .section-text h2 {
-        font-size: 2rem;
-    }
+.zigzag-inline1:hover {
+    background-color: #52af409d;
+    color: #fff;
+}
 
-    .section-text p {
-        font-size: 1rem;
-        line-height: 1.6;
-    }
+.info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
-    .section-image img {
-        max-width: 180px;
-        max-height: 180px;
-    }
+.info-list li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
 
-    .bottom-nav {
-        padding: 12px 20px;
-        gap: 18px;
-        font-size: 0.8rem;
-    }
+.section-image.hometown-image img {
+    max-width: 400px;
+    max-height: 400px;
 }
