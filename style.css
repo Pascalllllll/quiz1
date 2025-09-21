@@ -300,11 +300,11 @@ body::before {
         margin: 20px auto 0;
     }
 
-    .section-image.avatar-image{
+    .section-image.avatar-image {
         margin-top: -1000px;
     }
 
-    .section-image.hometown-image{
+    .section-image.hometown-image {
         margin-top: -1300px;
     }
 
@@ -342,11 +342,11 @@ body::before {
         max-height: 180px;
     }
 
-    .section-image.avatar-image{
+    .section-image.avatar-image {
         margin-top: -1300px;
     }
 
-    .section-image.hometown-image{
+    .section-image.hometown-image {
         margin-top: -1500px;
     }
 
@@ -435,6 +435,100 @@ body::before {
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
 }
 
+/* Food gallery */
+.food-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    /* 2 foto per baris */
+    gap: 20px 40px;
+    /* jarak antar kolom dan baris */
+    justify-content: center;
+    margin-top: 45px;
+}
+
+.food-gallery img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+/* Hover effect */
+.food-gallery img:hover {
+    transform: scale(1.2) translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Geser baris genap ke kanan */
+.food-gallery img:nth-child(3),
+.food-gallery img:nth-child(4),
+.food-gallery img:nth-child(7),
+.food-gallery img:nth-child(8) {
+    transform: translateX(40px);
+}
+
+/* Hover khusus untuk baris geser */
+.food-gallery img:nth-child(3):hover,
+.food-gallery img:nth-child(4):hover,
+.food-gallery img:nth-child(7):hover,
+.food-gallery img:nth-child(8):hover {
+    transform: translateX(40px) scale(1.2) translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+.food-gallery1 {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    /* 2 foto per baris */
+    gap: 20px 40px;
+    /* jarak antar kolom dan baris */
+    justify-content: center;
+    margin-top: 45px;
+}
+
+.food-gallery1 img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+/* Hover effect */
+.food-gallery1 img:hover {
+    transform: scale(1.2) translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+.food-gallery1 img:nth-child(1),
+.food-gallery1 img:nth-child(2),
+.food-gallery1 img:nth-child(5),
+.food-gallery1 img:nth-child(6),
+.food-gallery1 img:nth-child(9),
+.food-gallery1 img:nth-child(10) {
+    transform: translateX(40px);
+}
+
+/* Hover khusus untuk yang digeser */
+.food-gallery1 img:nth-child(1):hover,
+.food-gallery1 img:nth-child(2):hover,
+.food-gallery1 img:nth-child(5):hover,
+.food-gallery1 img:nth-child(6):hover,
+.food-gallery1 img:nth-child(9):hover,
+.food-gallery1 img:nth-child(10):hover {
+    transform: translateX(40px) scale(1.2) translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* ========================
+   Additional Styles
+/*======================== */
+
 .zigzag-inline {
     display: inline-block;
     padding-left: 12px;
@@ -481,4 +575,18 @@ body::before {
 .section-image.hometown-image img {
     max-width: 400px;
     max-height: 400px;
+}
+
+.section.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* Tengah vertikal */
+    align-items: center;      /* Tengah horizontal */
+    min-height: 100vh;        /* Full tinggi layar */
+    text-align: center;
+    margin-top: 300px;
+}
+
+.section.tourist {
+    margin-top: -150px;
 }
