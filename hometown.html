@@ -4,67 +4,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hometown</title>
+    <title>Hometown - Hosea Felix Sanjaya</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="img/avatar.png">
-    <!-- Font dan icon -->
+    <!-- Font and icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <!-- Header kanan atas -->
+    <!-- Header top right -->
     <header class="top-right">
-        <a href="https://www.instagram.com/hoseafelix_/" target="_blank">
-            <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://github.com/Pascalllllll" target="_blank">
-            <i class="fab fa-github"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/hosea-felix-sanjaya-3a9a0931b" target="_blank">
-            <i class="fab fa-linkedin"></i>
-        </a>
+        <a href="https://www.instagram.com/hoseafelix_/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://github.com/Pascalllllll" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/hosea-felix-sanjaya-3a9a0931b" target="_blank"><i
+                class="fab fa-linkedin"></i></a>
         <span id="clock"></span>
     </header>
 
-    <!-- Isi -->
-    <main class="center">
-        <h1>HOSEA FELIX SANJAYA</h1>
-        <h2 class="subtitle">Хосеа Феликс Санжая<br>ホセア・フェリックス・サンジャヤ</h2>
+    <!-- Hometown Sections -->
+    <main class="profile-sections">
+        <!-- Personal Info -->
+        <section class="section fade-text">
+            <div class="section-text">
+                <h2>
+                    <span style="background-color:#52af409d; color: #fff; padding: 5px; border-radius: 10px;">Home</span> Town
+                </h2>
+                <p>
+                    Hi! I’m <span class="zigzag-inline1"><strong>Hosea Felix Sanjaya</strong></span>,
+                    often called <strong>Hosea</strong> or <strong>Felix</strong>.
+                    I was born on <strong>June 19, 2006</strong> and grew up in
+                    <strong>Kediri, East Java</strong> — a city full of history, culture,
+                    and delicious food. My home is at <em>Jl. Adi Sucipto No. 154</em>,
+                    where everyday life blends tradition with modern vibes.
+                </p>
+            </div>
+            <div class="section-image hometown-image">
+                <img src="img/rumah.jpg" alt="My House">
+            </div>
+        </section>
+
+        <!-- Fun Facts -->
+        <section class="section fade-text">
+            <div class="section-text">
+                <h2>Fun Facts about Kediri</h2>
+                <div class="zigzag-container">
+                    <div class="zigzag-box">🌋 Home to the active volcano Mount Kelud</div>
+                    <div class="zigzag-box">🛕 One of the oldest cities in East Java</div>
+                    <div class="zigzag-box">🧈 Famous for Tahu Takwa & Getuk Pisang</div>
+                    <div class="zigzag-box">🎭 Rich in traditional cultural performances</div>
+                    <div class="zigzag-box">🌊 Waterfalls and tea plantations nearby</div>
+                </div>
+            </div>
+            <div class="section-image gallery-zigzag">
+                <img src="img/kelud.jpg" alt="Mount Kelud">
+                <img src="img/tahu.jpg" alt="Tahu Takwa">
+                <img src="img/monumen.jpg" alt="Kediri Monument">
+            </div>
+        </section>
     </main>
 
-    <!-- Navbar bawah -->
+    <!-- Bottom Navbar -->
     <nav class="bottom-nav">
         <a href="index.html">Home</a>
         <a href="profile.html">Profile</a>
-        <a href="hometown.html">Hometown</a>
+        <a href="hometown.html" class="active">Hometown</a>
         <a href="food.html">Food</a>
         <a href="tourist.html">Travel</a>
     </nav>
 
-    <!-- jam -->
+    <!-- Clock + Animation -->
     <script>
         function updateClock() {
             const now = new Date();
-            let hours = now.getHours();
-            let minutes = now.getMinutes();
-            let seconds = now.getSeconds();
-            if (hours < 10) {
-                hours = "0" + hours;
-            }
-            if (minutes < 10) {
-                minutes = "0" + minutes;
-            }
-            if (seconds < 10) {
-                seconds = "0" + seconds;
-            }
-            const timeString = hours + ":" + minutes + ":" + seconds;
-            document.getElementById("clock").textContent = timeString;
+            let h = String(now.getHours()).padStart(2, "0");
+            let m = String(now.getMinutes()).padStart(2, "0");
+            let s = String(now.getSeconds()).padStart(2, "0");
+            document.getElementById("clock").textContent = `${h}:${m}:${s}`;
         }
         setInterval(updateClock, 1000);
         updateClock();
-    </script>
 
+        // Scroll fade animation
+        const sections = document.querySelectorAll('.section');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, { threshold: 0.5 });
+
+        sections.forEach(sec => observer.observe(sec));
+    </script>
 </body>
 
 </html>
