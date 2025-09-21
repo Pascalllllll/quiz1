@@ -4,67 +4,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tourist Places</title>
+    <title>Tourist Places - Hosea Felix Sanjaya</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="img/avatar.png">
-    <!-- Font dan icon -->
+    <!-- Font and icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <!-- Header kanan atas -->
+    <!-- Header top right -->
     <header class="top-right">
-        <a href="https://www.instagram.com/hoseafelix_/" target="_blank">
-            <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://github.com/Pascalllllll" target="_blank">
-            <i class="fab fa-github"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/hosea-felix-sanjaya-3a9a0931b" target="_blank">
-            <i class="fab fa-linkedin"></i>
-        </a>
+        <a href="https://www.instagram.com/hoseafelix_/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://github.com/Pascalllllll" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/hosea-felix-sanjaya-3a9a0931b" target="_blank"><i
+                class="fab fa-linkedin"></i></a>
         <span id="clock"></span>
     </header>
 
-    <!-- Isi -->
-    <main class="center">
-        <h1>HOSEA FELIX SANJAYA</h1>
-        <h2 class="subtitle">Хосеа Феликс Санжая<br>ホセア・フェリックス・サンジャヤ</h2>
+    <!-- Tourist Sections -->
+    <main class="profile-sections">
+        <!-- Intro Paragraph -->
+        <section class="section fade-text intro" style="flex-direction: column; text-align:center; justify-content: center;">
+            <div class="section-text" style="max-width:800px;">
+                <h2>My Travel <span
+                        style="background-color:#fa0f0fb9; color:#fff; padding:5px; border-radius:10px;">Dream</span></h2>
+                <p>
+                    I’ve always dreamed of traveling abroad to explore new cultures, taste different cuisines, and
+                    experience the wonders of the world. Sadly, I haven’t had the opportunity yet. However, I have
+                    realized that Indonesia itself offers unforgettable destinations that are equally magical. From
+                    mountains covered in mist to beaches glowing with golden sunsets, each trip has given me stories
+                    worth keeping. In this section, I’ll share some of the most memorable places I’ve visited in
+                    Indonesia, as well as my dream destination abroad. These journeys made me appreciate my homeland
+                    while still fueling my dream to step into foreign lands one day.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 2 (Image Right) -->
+        <section class="section fade-text tourist">
+            <div class="section-text">
+                <h2>Dieng Plateau</h2>
+                <p>
+                    Visiting Dieng feels like stepping into another world. The air is so cold that even during the day,
+                    you can see your breath as if it were winter. Farmers there grow a special type of chili that looks
+                    like jalapeños but with its own fiery kick. Beyond that, the colorful Telaga Warna lake and the
+                    ancient Hindu temples scattered across the plateau add an almost mystical charm to the region. For
+                    me, Dieng is both chilling and enchanting—literally.
+                </p>
+            </div>
+            <div class="section-image">
+                <img src="img/dieng.jpg" alt="Dieng Plateau">
+            </div>
+        </section>
+
+        <!-- Section 3 (Image Left) -->
+        <section class="section fade-text" style="flex-direction: row-reverse;">
+            <div class="section-text">
+                <h2>Bali</h2>
+                <p>
+                    Bali is not only about stunning beaches, but also about its delicious cuisine. One of the most
+                    unforgettable meals I had there was the famous <em>babi guling</em>—a roasted pig dish bursting with
+                    flavor and spices. But what makes Bali truly unique is how culture and daily life blend together:
+                    traditional dance performances in small villages, temple offerings lining the streets, and the
+                    warm smiles of locals welcoming every visitor. Every corner of Bali feels alive with tradition and
+                    energy.
+                </p>
+            </div>
+            <div class="section-image">
+                <img src="img/bali.jpg" alt="Bali Island">
+            </div>
+        </section>
+
+        <!-- Section 4 (Image Right) -->
+        <section class="section fade-text">
+            <div class="section-text">
+                <h2>Dreaming of <span
+                        style="background-color:#fa0f0fb9; color:#fff; padding:5px; border-radius:10px;">Japan</span></h2>
+                <p>
+                    If there’s one country abroad I want to visit the most, it’s Japan. The iconic Shibuya Crossing in
+                    Tokyo has always fascinated me, especially seeing it in countless movies and videos online. Beyond
+                    that, Japanese cuisine—sushi, ramen, and so much more—feels like a dream for my taste buds. I also
+                    admire how clean and organized the cities are, making every corner look perfect. Japan, to me, is
+                    the ultimate blend of tradition, modernity, and perfection. Someday, I hope to walk its streets in
+                    person.
+                </p>
+            </div>
+            <div class="section-image gallery-zigzag">
+                <img src="img/japan.jpg" alt="Japan - Shibuya">
+                <img src="img/ramen.jpg" alt="Japan - Ramen">
+                <img src="img/sushi.jpg" alt="Japan - Sushi">
+            </div>
+        </section>
     </main>
 
-    <!-- Navbar bawah -->
+    <!-- Bottom Navbar -->
     <nav class="bottom-nav">
         <a href="index.html">Home</a>
         <a href="profile.html">Profile</a>
         <a href="hometown.html">Hometown</a>
         <a href="food.html">Food</a>
-        <a href="tourist.html">Travel</a>
+        <a href="tourist.html" class="active">Travel</a>
     </nav>
 
-    <!-- jam -->
+    <!-- Clock + Animation -->
     <script>
         function updateClock() {
             const now = new Date();
-            let hours = now.getHours();
-            let minutes = now.getMinutes();
-            let seconds = now.getSeconds();
-            if (hours < 10) {
-                hours = "0" + hours;
-            }
-            if (minutes < 10) {
-                minutes = "0" + minutes;
-            }
-            if (seconds < 10) {
-                seconds = "0" + seconds;
-            }
-            const timeString = hours + ":" + minutes + ":" + seconds;
-            document.getElementById("clock").textContent = timeString;
+            let h = String(now.getHours()).padStart(2, "0");
+            let m = String(now.getMinutes()).padStart(2, "0");
+            let s = String(now.getSeconds()).padStart(2, "0");
+            document.getElementById("clock").textContent = `${h}:${m}:${s}`;
         }
         setInterval(updateClock, 1000);
         updateClock();
-    </script>
 
+        // Scroll fade animation
+        const sections = document.querySelectorAll('.section');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, { threshold: 0.5 });
+
+        sections.forEach(sec => observer.observe(sec));
+    </script>
 </body>
 
 </html>
