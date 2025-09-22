@@ -13,55 +13,97 @@
 </head>
 
 <body>
-    <!-- Header top right -->
+    <!-- Header kanan atas -->
     <header class="top-right">
         <a href="https://www.instagram.com/hoseafelix_/" target="_blank"><i class="fab fa-instagram"></i></a>
         <a href="https://github.com/Pascalllllll" target="_blank"><i class="fab fa-github"></i></a>
         <a href="https://www.linkedin.com/in/hosea-felix-sanjaya-3a9a0931b" target="_blank"><i
                 class="fab fa-linkedin"></i></a>
         <span id="clock"></span>
+        <!-- Tombol Dark Mode -->
+        <label class="switch">
+            <input type="checkbox" id="darkToggle">
+            <span class="slider"></span>
+        </label>
     </header>
 
-    <!-- Hometown Sections -->
-    <main class="profile-sections">
-        <!-- Personal Info -->
-        <section class="section fade-text">
-            <div class="section-text">
-                <h2>
-                    <span style="background-color:#52af409d; color: #fff; padding: 5px; border-radius: 10px;">Home</span> Town
-                </h2>
-                <p>
-                    Hi! I’m <span class="zigzag-inline1"><strong>Hosea Felix Sanjaya</strong></span>,
-                    often called <strong>Hosea</strong> or <strong>Felix</strong>.
-                    I was born on <strong>June 19, 2006</strong> and grew up in
-                    <strong>Kediri, East Java</strong> — a city full of history, culture,
-                    and delicious food. My home is at <em>Jl. Adi Sucipto No. 154</em>,
-                    where everyday life blends tradition with modern vibes.
-                </p>
-            </div>
-            <div class="section-image hometown-image">
-                <img src="img/rumah.jpg" alt="My House">
-            </div>
-        </section>
+    <!-- Hometown Section -->
+    <section class="section hometown">
+        <div class="section-text">
+            <h2>My Hometown:
+                <span style="background-color:#4caf50c5; color:#fff; padding:5px; border-radius:10px;">Kediri</span>
+            </h2>
+            <p>
+                I was born and raised in <strong>Kediri</strong>, one of the oldest cities in East Java, Indonesia.
+                Located about 130 km southwest of Surabaya, Kediri holds a unique charm as the
+                <em>third-largest city in East Java</em> after Surabaya and Malang.
+            </p>
+            <p>
+                The city is divided by the <strong>Brantas River</strong>, which flows from the south to the north,
+                giving Kediri a refreshing and scenic atmosphere. With a total area of <strong>63.40 km²</strong> and
+                a population of more than <strong>300,000 people</strong>, Kediri is both vibrant and full of history.
+            </p>
+            <p>
+                Kediri is widely known as one of the biggest centers for <strong>sugar production</strong>
+                and the <strong>tobacco industry</strong> in Indonesia. In fact, one of the nation’s most famous
+                cigarette companies, <em>Gudang Garam</em>, has its headquarters here.
+                Beyond its industries, Kediri also carries cultural and historical significance,
+                making it a city that beautifully blends tradition, economy, and daily life.
+            </p>
+            <p>
+                To me, Kediri is not just a hometown—it’s a place filled with stories, heritage,
+                and the warm community spirit that has shaped who I am today.
+            </p>
+            <p class="source-text" style="font-size:0.9rem; margin-top:20px;">
+                Source: <a href="https://id.wikipedia.org/wiki/Kota_Kediri" target="_blank" rel="noopener noreferrer"
+                    class="source-link" style="text-decoration: none; transition: color 0.3s ease;">Kota Kediri –
+                    Wikipedia</a>
+            </p>
 
-        <!-- Fun Facts -->
-        <section class="section fade-text">
-            <div class="section-text">
-                <h2>Fun Facts about Kediri</h2>
-                <div class="zigzag-container">
-                    <div class="zigzag-box">🌋 Home to the active volcano Mount Kelud</div>
-                    <div class="zigzag-box">🛕 One of the oldest cities in East Java</div>
-                    <div class="zigzag-box">🧈 Famous for Tahu Takwa & Getuk Pisang</div>
-                    <div class="zigzag-box">🎭 Rich in traditional cultural performances</div>
-                    <div class="zigzag-box">🌊 Waterfalls and tea plantations nearby</div>
-                </div>
+        </div>
+        <div class="section-image">
+            <img style="max-width: 800px;" src="img/monumen.jpg" alt="Kediri City">
+        </div>
+    </section>
+
+    <!-- Fun Facts -->
+    <section class="section hometown">
+        <div class="section-text">
+            <h2>Fun Facts about Kediri</h2>
+            <div class="zigzag-container">
+                <a class="zigzag-box" style="text-decoration: none;" href="https://id.wikipedia.org/wiki/Gunung_Kelud"
+                    target="_blank" rel="noopener noreferrer">
+                    🌋 Home to the active volcano Mount Kelud
+                </a>
+                <a class="zigzag-box" style="text-decoration: none;"
+                    href="https://authentic-indonesia.com/blog/5-oldest-cities-in-indonesia/" target="_blank"
+                    rel="noopener noreferrer">
+                    🛕 One of the oldest cities in East Java
+                </a>
+                <a class="zigzag-box" style="text-decoration: none;"
+                    href="https://www.kedirikota.go.id/p/dalamberita/13981/tahu-takwa-dan-getuk-pisang-khas-kediri-jajanan-favorit-pemudik"
+                    target="_blank" rel="noopener noreferrer">
+                    🧈 Famous for Tahu Takwa & Getuk Pisang
+                </a>
+                <a class="zigzag-box" style="text-decoration: none;"
+                    href="https://kumparan.com/juniar-aleyda1106/mengenal-kebudayaan-di-kediri-yang-kaya-akan-sejarah-dan-tradisi-22jkq5myax5"
+                    target="_blank" rel="noopener noreferrer">
+                    🎭 Rich in traditional cultural performances
+                </a>
+                <a class="zigzag-box" style="text-decoration: none;"
+                    href="https://beautyofindonesia.com/id/wisata/wisata-alam/air-terjun-irenggolo" target="_blank"
+                    rel="noopener noreferrer">
+                    🌊 Waterfalls and tea plantations nearby
+                </a>
             </div>
-            <div class="section-image gallery-zigzag">
-                <img src="img/kelud.jpg" alt="Mount Kelud">
-                <img src="img/tahu.jpg" alt="Tahu Takwa">
-                <img src="img/monumen.jpg" alt="Kediri Monument">
-            </div>
-        </section>
+
+        </div>
+        <div class="section-image gallery-zigzag">
+            <img src="img/kelud.jpg" alt="Mount Kelud">
+            <img src="img/tahu.jpg" alt="Tahu Takwa">
+            <img src="img/getuk.jpg" alt="Kediri Monument">
+        </div>
+    </section>
     </main>
 
     <!-- Bottom Navbar -->
@@ -96,6 +138,38 @@
         }, { threshold: 0.5 });
 
         sections.forEach(sec => observer.observe(sec));
+
+        // Dark Mode toggle with localStorage
+        const toggleBtn = document.getElementById("darkToggle");
+        let darkMode = localStorage.getItem("dark-mode");
+
+        const enableDarkMode = () => {
+            document.body.classList.add("dark");
+            toggleBtn.checked = true; // switch ke kanan
+            localStorage.setItem("dark-mode", "enabled");
+        };
+
+        const disableDarkMode = () => {
+            document.body.classList.remove("dark");
+            toggleBtn.checked = false; // switch ke kiri
+            localStorage.setItem("dark-mode", "disabled");
+        };
+
+        // Set state saat page load
+        if (darkMode === "enabled") {
+            enableDarkMode();
+        } else {
+            disableDarkMode();
+        }
+
+        // Event listener
+        toggleBtn.addEventListener("change", () => {
+            if (toggleBtn.checked) {
+                enableDarkMode();
+            } else {
+                disableDarkMode();
+            }
+        });   
     </script>
 </body>
 
