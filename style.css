@@ -39,14 +39,31 @@ body::before {
 }
 
 @keyframes boxPop {
-    0%, 100% { transform: scale(1); opacity: 0.4; }
-    50% { transform: scale(1.3); opacity: 0.8; }
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.4;
+    }
+
+    50% {
+        transform: scale(1.3);
+        opacity: 0.8;
+    }
 }
 
 @keyframes boxColor {
-    0% { filter: hue-rotate(0deg); }
-    50% { filter: hue-rotate(180deg); }
-    100% { filter: hue-rotate(360deg); }
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    50% {
+        filter: hue-rotate(180deg);
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
+    }
 }
 
 /* ========================
@@ -86,7 +103,7 @@ body::before {
 .switch {
     position: relative;
     display: inline-block;
-    width: 50px;
+    width: 54px;
     height: 26px;
     margin-left: 10px;
 }
@@ -111,26 +128,26 @@ body::before {
 
 .slider:before {
     position: absolute;
-    content: "☀️";
+    content: "🌕";
     height: 22px;
-    width: 22px;
-    left: 2px;
+    width: 28px;
+    left: 1px;
     bottom: 2px;
     text-align: center;
-    font-size: 14px;
+    font-size: 20px;
     line-height: 22px;
-    background-color: white;
+    background-color: transparent;
     border-radius: 50%;
-    transition: 0.4s;
+    transition: 0.5s;
 }
 
-input:checked + .slider {
+input:checked+.slider {
     background-color: #444;
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
     transform: translateX(24px);
-    content: "🌙";
+    content: "🌑";
 }
 
 /* ========================
@@ -286,7 +303,7 @@ input:checked + .slider:before {
 /* ========================
    Components
 ======================== */
-/* Zigzag Boxes */
+/* Zigzag Boxes dengan Efek Holografik */
 .zigzag-container {
     display: flex;
     flex-wrap: wrap;
@@ -303,9 +320,27 @@ input:checked + .slider:before {
     font-size: 1.1rem;
     font-weight: 500;
     color: #2c3e50;
-    transition: all 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.5s ease, box-shadow 0.5s ease;
     cursor: pointer;
     text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.zigzag-box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(0deg,
+            transparent,
+            transparent 30%,
+            rgba(0, 255, 255, 0.3));
+    transform: rotate(-45deg);
+    transition: all 0.5s ease;
+    opacity: 0;
 }
 
 .zigzag-box:hover {
@@ -313,6 +348,11 @@ input:checked + .slider:before {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     background-color: #f3b95b;
     color: #fff;
+}
+
+.zigzag-box:hover::before {
+    opacity: 1;
+    transform: rotate(-45deg) translateY(100%);
 }
 
 /* Inline Zigzag */
@@ -350,11 +390,25 @@ input:checked + .slider:before {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.gallery-zigzag img:nth-child(1) { transform: rotate(-6deg) translateY(15px); }
-.gallery-zigzag img:nth-child(2) { transform: rotate(5deg) translateY(-20px); }
-.gallery-zigzag img:nth-child(3) { transform: rotate(7deg) translateY(15px); }
-.gallery-zigzag img:nth-child(4) { transform: rotate(3deg) translateY(1px); }
-.gallery-zigzag img:nth-child(5) { transform: rotate(-8deg) translateY(10px); }
+.gallery-zigzag img:nth-child(1) {
+    transform: rotate(-6deg) translateY(15px);
+}
+
+.gallery-zigzag img:nth-child(2) {
+    transform: rotate(5deg) translateY(-20px);
+}
+
+.gallery-zigzag img:nth-child(3) {
+    transform: rotate(7deg) translateY(15px);
+}
+
+.gallery-zigzag img:nth-child(4) {
+    transform: rotate(3deg) translateY(1px);
+}
+
+.gallery-zigzag img:nth-child(5) {
+    transform: rotate(-8deg) translateY(10px);
+}
 
 .gallery-zigzag img:hover {
     transform: scale(1.3) rotate(0deg);
@@ -496,6 +550,7 @@ input:checked + .slider:before {
         opacity: 0;
         transform: translateY(-30px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -557,6 +612,13 @@ body.dark .zigzag-box:hover {
     background-color: #6e2b8d;
 }
 
+body.dark .zigzag-box::before {
+    background: linear-gradient(0deg,
+            transparent,
+            transparent 30%,
+            rgba(255, 105, 180, 0.3));
+}
+
 body.dark .zigzag-inline {
     background: #4b3a4d85;
 }
@@ -605,6 +667,7 @@ body.dark .source-link {
     .profile-sections {
         padding: 0 30px;
     }
+
     .section {
         padding: 50px 30px;
     }
@@ -617,54 +680,54 @@ body.dark .source-link {
         padding: 40px 20px;
         margin-top: 150px;
     }
-    
+
     .section-text {
         text-align: center;
         margin: 0 auto;
     }
-    
+
     .section-image {
         margin: 20px auto 0;
     }
-    
+
     .section-image.avatar-image {
         margin-top: -1000px;
     }
-    
+
     .section-image img {
         max-width: 220px;
         max-height: 220px;
     }
-    
+
     .gallery-zigzag {
         margin: 0 auto;
     }
-    
+
     .profile-sections {
         padding: 0 20px;
     }
-    
+
     .section.hometown {
         flex-direction: column;
         text-align: center;
         padding: 40px 20px;
     }
-    
+
     .section.hometown .section-text {
         text-align: center;
         padding: 0;
     }
-    
+
     .section.hometown .section-text h2 {
         font-size: 1.8rem;
         text-align: center;
         margin-top: 70px;
     }
-    
+
     .section.hometown .section-image {
         margin-top: 25px;
     }
-    
+
     .section.hometown .section-image img {
         max-width: 300px;
     }
@@ -674,51 +737,328 @@ body.dark .source-link {
     .section {
         margin-top: 120px;
     }
-    
+
     .section-text h2 {
         font-size: 2rem;
     }
-    
+
     .section-text p {
         font-size: 1rem;
         line-height: 1.6;
     }
-    
+
     .section-image img {
         max-width: 180px;
         max-height: 180px;
     }
-    
+
     .section-image.avatar-image {
         margin-top: -1100px;
     }
-    
+
     .bottom-nav {
         padding: 12px 20px;
         gap: 18px;
         font-size: 0.8rem;
     }
-    
+
     .gallery-zigzag {
         opacity: 0;
     }
-    
+
     .section.hometown {
         padding: 30px 15px;
     }
-    
+
     .section.hometown .section-text h2 {
         font-size: 1.8rem;
         text-align: center;
         margin-top: 70px;
     }
-    
+
     .section.hometown .section-text p {
         font-size: 1rem;
         line-height: 1.6;
     }
-    
+
     .section.hometown .section-image img {
         max-width: 220px;
     }
 }
+
+/* ========================
+   Flip Tourist Cards
+======================== */
+.card {
+    width: 220px;
+    height: 280px;
+    margin: 1rem auto;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+body.dark .card-front,
+body.dark .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.623);
+    text-align: center;
+}
+
+/* Front side */
+.card-front {
+    background: #ffffffee;
+    color: #2c3e50;
+    border: 1px solid #e5e7eb;
+}
+
+body.dark .card-front {
+    background: #2f2b34;
+    color: #2c3e50;
+    border: 1px solid #2b2c30;
+}
+
+
+.card-front i {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: #f3b95b;
+}
+
+body.dark .card-front i {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: #ff6dc2b0;
+}
+
+.card-front h3 {
+    font-size: 1.1rem;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+/* Back side */
+.card-back {
+    background: #ffd580;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+body.dark .card-back {
+    background: #8e44ad;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+
+.card-back p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    margin: 20px;
+    font-weight: 600;
+    color: white;
+}
+
+.card-back a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+/* ========================
+   Sparkle Button Effect (Hanya untuk HOSEA FELIX SANJAYA)
+======================== */
+:root {
+    --color: #f1a829f3;
+    --shadow: #e5ce9e;
+    --glare: hsla(96, 88%, 77%, 0.75);
+    --font-size: 4rem;
+    --transition: 0.2s;
+}
+
+body.dark .sparkle-button span {
+    --color: #ff6dc2;
+    --shadow: #582d48;
+    --glare: hsla(57, 100%, 75%, 0.75);
+}
+
+
+.center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.sparkle-button {
+    --padding: 1rem;
+    padding: var(--padding);
+    border-radius: 0.5rem;
+    text-decoration: none;
+    color: transparent;
+    position: relative;
+    transition: background 0.2s;
+    margin-bottom: 1rem;
+}
+
+.sparkle-button span {
+    display: inline-block;
+    font-size: var(--font-size);
+    font-weight: 800;
+    transition: all 0.2s;
+    text-decoration: none;
+    text-shadow:
+        calc(var(--hover) * -0px) calc(var(--hover) * 0px) var(--shadow),
+        calc(var(--hover) * -2px) calc(var(--hover) * 2px) var(--shadow),
+        calc(var(--hover) * -3px) calc(var(--hover) * 3px) var(--shadow),
+        calc(var(--hover) * -4px) calc(var(--hover) * 4px) var(--shadow),
+        calc(var(--hover) * -5px) calc(var(--hover) * 5px) var(--shadow);
+    transform: translate(calc(var(--hover) * 5px), calc(var(--hover) * -5px));
+}
+
+.sparkle-button span:last-of-type {
+    position: absolute;
+    inset: var(--padding);
+    background: linear-gradient(108deg,
+            transparent 0 55%,
+            var(--glare) 55% 60%,
+            transparent 60% 70%,
+            var(--glare) 70% 85%,
+            transparent 85%) calc(var(--pos) * -200%) 0% / 200% 100%, var(--color);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    z-index: 2;
+    text-shadow: none;
+    transform: translate(calc(var(--hover) * 5px), calc(var(--hover) * -5px));
+}
+
+.sparkle-button span:last-of-type {
+    transition: transform 0.2s, background-position 0s;
+}
+
+.sparkle-button:hover span:last-of-type {
+    transition: transform 0.2s, background-position calc(var(--hover) * 1.5s) calc(var(--hover) * 0.25s);
+}
+
+.sparkle-button {
+    --hover: 0.4;
+    --pos: 0;
+}
+
+.sparkle-button:hover {
+    --hover: 1;
+    --pos: 1;
+}
+
+.sparkle-button:active {
+    --hover: 0;
+}
+
+.sparkle-button:active span:last-of-type {
+    --hover: 0;
+    --pos: 1;
+}
+
+.sparkle-button svg {
+    position: absolute;
+    z-index: 3;
+    width: calc(var(--font-size) * 0.5);
+    aspect-ratio: 1;
+}
+
+.sparkle-button svg path {
+    fill: var(--glare);
+}
+
+/* Animation for sparkles */
+.sparkle-button:hover svg {
+    animation: sparkle 0.75s calc((var(--delay-step) * var(--d)) * 1s) both;
+}
+
+@keyframes sparkle {
+    50% {
+        transform: translate(-50%, -50%) scale(var(--s, 1));
+    }
+}
+
+.sparkle-button svg {
+    --delay-step: 0.15;
+    top: calc(var(--y, 50) * 1%);
+    left: calc(var(--x, 0) * 1%);
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.sparkle-button svg:nth-of-type(1) {
+    --x: 0;
+    --y: 20;
+    --s: 1.1;
+    --d: 1;
+}
+
+.sparkle-button svg:nth-of-type(2) {
+    --x: 15;
+    --y: 80;
+    --s: 1.25;
+    --d: 2;
+}
+
+.sparkle-button svg:nth-of-type(3) {
+    --x: 45;
+    --y: 40;
+    --s: 1.1;
+    --d: 3;
+}
+
+.sparkle-button svg:nth-of-type(4) {
+    --x: 75;
+    --y: 60;
+    --s: 0.9;
+    --d: 2;
+}
+
+.sparkle-button svg:nth-of-type(5) {
+    --x: 100;
+    --y: 30;
+    --s: 0.8;
+    --d: 4;
+}
+
+
