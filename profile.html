@@ -20,7 +20,13 @@
         <a href="https://www.linkedin.com/in/hosea-felix-sanjaya-3a9a0931b" target="_blank"><i
                 class="fab fa-linkedin"></i></a>
         <span id="clock"></span>
+        <!-- Tombol Dark Mode -->
+        <label class="switch">
+            <input type="checkbox" id="darkToggle">
+            <span class="slider"></span>
+        </label>
     </header>
+
 
     <!-- Profile Sections -->
     <main class="profile-sections">
@@ -31,7 +37,8 @@
                         style="background-color:#ff73c59d; color: #fff; padding: 5px; border-radius: 10px;">Me</span>
                 </h2>
                 <p>
-                    Hello! My name is <span class="zigzag-inline"> <strong>Hosea Felix Sanjaya</strong>.</span>
+                    Hello! My name is <span class="zigzag-inline"> <strong>Hosea Felix Sanjaya</strong>,</span>
+                    often called <strong>Hosea</strong> or <strong>Felix</strong>.
                     I am currently pursuing my studies at <strong>Institut Teknologi Sepuluh Nopember (ITS)
                         Surabaya</strong>,
                     majoring in <span class="zigzag-inline"> <strong>Informatics Engineering</strong>.</span>
@@ -42,11 +49,33 @@
                     digital solutions.
                     Beyond academics, I love working on collaborative projects that mix creativity with technical depth.
                 </p>
+                <p>
+                    📅 Birthday: <strong>19 June 2006</strong><br>
+                    🎂 Age: <strong><span id="age"></span> years old</strong>
+                </p>
             </div>
             <div class="section-image avatar-image">
                 <img src="img/avatar.jpg" alt="About Me">
             </div>
         </section>
+
+        <script>
+            function calculateAge(birthDate) {
+                const today = new Date();
+                let age = today.getFullYear() - birthDate.getFullYear();
+                const monthDiff = today.getMonth() - birthDate.getMonth();
+                const dayDiff = today.getDate() - birthDate.getDate();
+
+                // Kurangi umur kalau belum lewat ulang tahun tahun ini
+                if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+                    age--;
+                }
+                return age;
+            }
+
+            const birthday = new Date(2006, 5, 19); // bulan dihitung dari 0 (0=Jan, jadi 5=Juni)
+            document.getElementById("age").textContent = calculateAge(birthday);
+        </script>
 
         <!-- Hobbies -->
         <section class="section fade-text">
@@ -156,7 +185,37 @@
 
         sections.forEach(sec => observer.observe(sec));
 
+        // Dark Mode toggle with localStorage
+        const toggleBtn = document.getElementById("darkToggle");
+        let darkMode = localStorage.getItem("dark-mode");
 
+        const enableDarkMode = () => {
+            document.body.classList.add("dark");
+            toggleBtn.checked = true; // switch ke kanan
+            localStorage.setItem("dark-mode", "enabled");
+        };
+
+        const disableDarkMode = () => {
+            document.body.classList.remove("dark");
+            toggleBtn.checked = false; // switch ke kiri
+            localStorage.setItem("dark-mode", "disabled");
+        };
+
+        // Set state saat page load
+        if (darkMode === "enabled") {
+            enableDarkMode();
+        } else {
+            disableDarkMode();
+        }
+
+        // Event listener
+        toggleBtn.addEventListener("change", () => {
+            if (toggleBtn.checked) {
+                enableDarkMode();
+            } else {
+                disableDarkMode();
+            }
+        });
     </script>
 </body>
 
