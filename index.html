@@ -20,8 +20,12 @@
         <a href="https://www.linkedin.com/in/hosea-felix-sanjaya-3a9a0931b" target="_blank"><i
                 class="fab fa-linkedin"></i></a>
         <span id="clock"></span>
+        <!-- Tombol Dark Mode -->
+        <label class="switch">
+            <input type="checkbox" id="darkToggle">
+            <span class="slider"></span>
+        </label>
     </header>
-
     <!-- Isi -->
     <main class="center">
         <h1 id="name" class="fade-text">HOSEA FELIX SANJAYA</h1>
@@ -62,7 +66,37 @@
             setTimeout(() => jp.classList.add("show"), 2500);
         };
 
-        let lastX = 0, lastY = 0, lastTime = Date.now();
+        // Dark Mode toggle with localStorage
+        const toggleBtn = document.getElementById("darkToggle");
+        let darkMode = localStorage.getItem("dark-mode");
+
+        const enableDarkMode = () => {
+            document.body.classList.add("dark");
+            toggleBtn.checked = true; // switch ke kanan
+            localStorage.setItem("dark-mode", "enabled");
+        };
+
+        const disableDarkMode = () => {
+            document.body.classList.remove("dark");
+            toggleBtn.checked = false; // switch ke kiri
+            localStorage.setItem("dark-mode", "disabled");
+        };
+
+        // Set state saat page load
+        if (darkMode === "enabled") {
+            enableDarkMode();
+        } else {
+            disableDarkMode();
+        }
+
+        // Event listener
+        toggleBtn.addEventListener("change", () => {
+            if (toggleBtn.checked) {
+                enableDarkMode();
+            } else {
+                disableDarkMode();
+            }
+        });
     </script>
 </body>
 
