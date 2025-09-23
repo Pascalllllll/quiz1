@@ -339,7 +339,7 @@ input:checked+.slider:before {
     background: linear-gradient(0deg,
             transparent,
             transparent 30%,
-            rgba(0, 255, 255, 0.3));
+            rgba(170, 103, 16, 0.514));
     transform: rotate(-45deg);
     transition: all 0.5s ease;
     opacity: 0;
@@ -941,7 +941,7 @@ body.dark .card-back {
 :root {
     --color: #f1a829f3;
     --shadow: #e5ce9e;
-    --glare: hsla(96, 88%, 77%, 0.75);
+    --glare: hsla(51, 88%, 77%, 0.75);
     --font-size: 4rem;
     --transition: 0.2s;
 }
@@ -1094,4 +1094,36 @@ body.dark .sparkle-button span {
     --y: 30;
     --s: 0.8;
     --d: 4;
+}
+
+/* ========================
+   Spark Line Effect
+======================== */
+.spark {
+    position: absolute;
+    width: 3.3px;
+    height: 20px;
+    background: #f39d12;
+    pointer-events: none;
+    opacity: 0;
+    transform-origin: 70% center;
+    /* pusat di cursor */
+    animation: explode 0.5s ease-out forwards;
+}
+
+@keyframes explode {
+    from {
+        transform: rotate(var(--angle)) translateY(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: rotate(var(--angle)) translateY(var(--distance));
+        opacity: 0;
+    }
+}
+
+body.dark .spark {
+    background: #fc56b7;
+    /* biar keliatan di dark mode */
 }
