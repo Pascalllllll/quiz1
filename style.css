@@ -124,11 +124,12 @@ body::before {
     background-color: #ccc;
     transition: 0.4s;
     border-radius: 26px;
+    box-shadow: 0 6px 20px rgba(47, 4, 68, 0.267);
 }
 
 .slider:before {
     position: absolute;
-    content: "🌕";
+    content: "🌝";
     height: 22px;
     width: 28px;
     left: 1px;
@@ -143,11 +144,12 @@ body::before {
 
 input:checked+.slider {
     background-color: #444;
+    box-shadow: 0 6px 20px rgba(172, 172, 172, 0.205);
 }
 
 input:checked+.slider:before {
     transform: translateX(24px);
-    content: "🌑";
+    content: "🌚";
 }
 
 /* ========================
@@ -366,8 +368,23 @@ input:checked+.slider:before {
 }
 
 .zigzag-inline:hover {
-    background-color: #ff73c59d;
+    background-color: #f39c12;
     color: #fff;
+}
+
+body.dark .zigzag-inline:hover {
+    background-color: #fc56b7c2;
+}
+
+.highlight {
+    background-color: #f39c12;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+body.dark .highlight {
+    background-color: #fc56b7c2;
 }
 
 /* Gallery Zigzag */
@@ -386,8 +403,12 @@ input:checked+.slider:before {
     height: 180px;
     object-fit: cover;
     border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    box-shadow: 10px 10px 20px #babecc, -10px -10px 20px #ffffff;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark .gallery-zigzag img {
+    box-shadow: 10px 10px 20px #2a0c3860, -10px -10px 20px #0000006c;
 }
 
 .gallery-zigzag img:nth-child(1) {
@@ -415,6 +436,10 @@ input:checked+.slider:before {
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
 }
 
+body.dark .gallery-zigzag img:hover {
+    box-shadow: 10px 10px 20px #2d0a3d7c, -10px -10px 20px #0000006c;
+}
+
 /* Food Gallery */
 .food-gallery,
 .food-gallery1 {
@@ -431,7 +456,7 @@ input:checked+.slider:before {
     height: 180px;
     object-fit: cover;
     border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 10px 10px 20px #babecc, -10px -10px 20px #ffffff;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     cursor: pointer;
 }
@@ -439,7 +464,17 @@ input:checked+.slider:before {
 .food-gallery img:hover,
 .food-gallery1 img:hover {
     transform: scale(1.2) translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+    box-shadow: 10px 10px 20px #babecc, -10px -10px 20px #ffffff;
+}
+
+body.dark .food-gallery img,
+body.dark .food-gallery1 img {
+    box-shadow: 10px 10px 20px #2a0c3860, -10px -10px 20px #0000006c;
+}
+
+body.dark .food-gallery img:hover,
+body.dark .food-gallery1 img:hover {
+    box-shadow: 10px 10px 20px #2a0c3860, -10px -10px 20px #0000006c;
 }
 
 /* Offset rows for food gallery */
@@ -646,7 +681,7 @@ body.dark .tourist-card p {
 }
 
 body.dark .tourist-card:hover {
-    background-color: #8e44ad;
+    background-color: #fc56b7c2;
 }
 
 body.dark .tourist-card:hover i,
@@ -753,7 +788,7 @@ body.dark .source-link {
     }
 
     .section-image.avatar-image {
-        margin-top: -1100px;
+        margin-top: -900px;
     }
 
     .bottom-nav {
@@ -820,7 +855,7 @@ body.dark .source-link {
     align-items: center;
     justify-content: center;
     border-radius: 1rem;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 10px 10px 20px #babecc, -10px -10px 20px #ffffff;
     text-align: center;
 }
 
@@ -835,7 +870,7 @@ body.dark .card-back {
     align-items: center;
     justify-content: center;
     border-radius: 1rem;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.623);
+    box-shadow: 10px 10px 20px #2a0c3860, -10px -10px 20px #0000006c;
     text-align: center;
 }
 
@@ -856,7 +891,7 @@ body.dark .card-front {
 .card-front i {
     font-size: 2.5em;
     margin-bottom: 15px;
-    color: #f3b95b;
+    color: #f39c12;
 }
 
 body.dark .card-front i {
@@ -873,13 +908,13 @@ body.dark .card-front i {
 
 /* Back side */
 .card-back {
-    background: #ffd580;
+    background: #f39c12;
     color: white;
     transform: rotateY(180deg);
 }
 
 body.dark .card-back {
-    background: #8e44ad;
+    background: #fc56b7c2;
     color: white;
     transform: rotateY(180deg);
 }
