@@ -218,6 +218,28 @@
                 disableDarkMode();
             }
         });
+
+        // 🔥 Efek Spark Line pada klik
+        document.addEventListener("click", function (e) {
+            console.log("Clicked!"); // cek apakah listener hidup
+            for (let i = 0; i < 9; i++) { // jumlah garis
+                const spark = document.createElement("div");
+                spark.classList.add("spark");
+
+                spark.style.left = `${e.pageX}px`;
+                spark.style.top = `${e.pageY}px`;
+
+                const angle = (360 / 9) * i; // bagi rata 360°
+                const distance = Math.random() * 60 + 30; // variasi jarak
+
+                spark.style.setProperty("--angle", `${angle}deg`);
+                spark.style.setProperty("--distance", `${distance}px`);
+
+                document.body.appendChild(spark);
+
+                setTimeout(() => spark.remove(), 1000);
+            }
+        });
     </script>
 
 </body>
