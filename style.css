@@ -269,12 +269,23 @@ body::after {
     transform: scale(1.1);
 }
 
+/* wadah gambar spesifik untuk halaman profil */
 .section-image-profile {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     min-width: 300px;
+}
+
+.section-image-profile img {
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+
 }
 
 /* ========================
@@ -510,6 +521,10 @@ input:checked+.slider:before {
 }
 
 /* Tourist Flip Cards */
+.avatar-flip-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
 .tourist-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -798,7 +813,6 @@ body.dark .source-text, body.dark .source-link { color: #fff; }
     .section-image { margin: 20px auto 0; }
     .section-image.avatar-image { margin-top: -1000px; }
     .section-image img { max-width: 220px; max-height: 220px; }
-    .section-image-profile { order: 2; margin-top: 40px; }
     .gallery-zigzag { margin: 0 auto; }
     .profile-sections { padding: 0 20px; }
 
@@ -837,6 +851,3 @@ body.dark .source-text, body.dark .source-link { color: #fff; }
     .section.hometown .section-text p { font-size: 1rem; line-height: 1.6; }
     .section.hometown .section-image img { max-width: 220px; }
 }
-
-
-
