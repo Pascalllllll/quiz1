@@ -7,50 +7,51 @@
     <title>Profile - Hosea Felix Sanjaya</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="img/avatar.png">
-    <!-- Font dan icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <!-- Header kanan atas -->
     <header class="top-right">
         <a href="https://www.instagram.com/hoseafelix_/" target="_blank"><i class="fab fa-instagram"></i></a>
         <a href="https://github.com/Pascalllllll" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/hosea-felix-sanjaya-3a9a0931b" target="_blank"><i
-                class="fab fa-linkedin"></i></a>
+        <a href="https://www.linkedin.com/in/hosea-felix-sanjaya-3a9a0931b" target="_blank"><i class="fab fa-linkedin"></i></a>
         <span id="clock"></span>
-        <!-- Tombol Dark Mode -->
         <label class="switch">
             <input type="checkbox" id="darkToggle">
             <span class="slider"></span>
         </label>
     </header>
 
-
-    <!-- Profile Sections -->
     <main class="profile-sections">
-        <!-- About Me -->
         <section class="section fade-text">
             <div class="section-text">
-                <h2>About <span class="highlight">Me</span>
-                </h2>
+                <h2>About <span class="highlight">Me</span></h2>
                 <p>
-                    Hello! My name is <span class="zigzag-inline"> <strong>Hosea Felix Sanjaya</strong>,</span>
-                    often called <strong>Hosea</strong> or <strong>Felix</strong>.
-                    I am currently pursuing my studies at <strong>Institut Teknologi Sepuluh Nopember (ITS)
-                        Surabaya</strong>,
-                    majoring in <span class="zigzag-inline"> <strong>Informatics Engineering</strong>.</span>
+                    Hi! I’m <span class="zigzag-inline"><strong>Hosea Felix Sanjaya</strong></span>,
+                    a student at <strong>Institut Teknologi Sepuluh Nopember (ITS) Surabaya</strong>,
+                    majoring in <span class="zigzag-inline"><strong>Informatics Engineering</strong></span>.
                 </p>
                 <p>
-                    I enjoy exploring data, technology, and problem-solving.
-                    My main interests are in <em>data analysis, software development</em>, and creating impactful
-                    digital solutions.
-                    Beyond academics, I love working on collaborative projects that mix creativity with technical depth.
+                    I’m passionate about <strong>data-driven technologies</strong> and especially the world of
+                    <span class="zigzag-inline">Web3</span>. Exploring <strong>blockchain</strong>,
+                    <strong>decentralization</strong>, and <strong>smart contracts</strong> excites me,
+                    and my future ambition is to become a <strong>Blockchain Developer</strong>.
                 </p>
-                <p>
-                    📅 Birthday: <strong>19 June 2006</strong><br>
-                    🎂 Age: <strong><span id="age"></span> years old</strong>
+                <p class="info-line">
+                    <i class="fa-solid fa-cake-candles"></i>
+                    <span class="label" style="margin-left: +3.5px;">Birthday:</span>
+                    <strong>19 June 2006</strong>
+                </p>
+                <p class="info-line">
+                    <i class="fa-solid fa-user"></i>
+                    <span class="label" style="margin-left: +4px;">Age:</span>
+                    <strong><span id="age"></span> years old</strong>
+                </p>
+                <p class="info-line">
+                    <i class="fa-solid fa-rocket"></i>
+                    <span class="label">Goal:</span>
+                    <strong><span style="margin-left: +3px;">Blockchain Developer</span></strong>
                 </p>
             </div>
             <div class="section-image avatar-image">
@@ -58,25 +59,6 @@
             </div>
         </section>
 
-        <script>
-            function calculateAge(birthDate) {
-                const today = new Date();
-                let age = today.getFullYear() - birthDate.getFullYear();
-                const monthDiff = today.getMonth() - birthDate.getMonth();
-                const dayDiff = today.getDate() - birthDate.getDate();
-
-                // Kurangi umur kalau belum lewat ulang tahun tahun ini
-                if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
-                    age--;
-                }
-                return age;
-            }
-
-            const birthday = new Date(2006, 5, 19); // bulan dihitung dari 0 (0=Jan, jadi 5=Juni)
-            document.getElementById("age").textContent = calculateAge(birthday);
-        </script>
-
-        <!-- Hobbies -->
         <section class="section fade-text">
             <div class="section-text">
                 <h2>Hobbies</h2>
@@ -92,14 +74,12 @@
                     <div class="zigzag-box">🍽️ Culinary</div>
                     <div class="zigzag-box">📱 Doomscrolling</div>
                     <div class="zigzag-box">🎯 Puzzle</div>
-                    <div class="zigzag-box"
-                        onclick="window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank')">▶️ YouTube</div>
+                    <div class="zigzag-box" onclick="window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank')">▶️ YouTube</div>
                     <div class="zigzag-box">🎬 Netflix</div>
                     <div class="zigzag-box">💪 Gym</div>
                     <div class="zigzag-box">🛍️ Shopping</div>
                     <div class="zigzag-box">🌐 Browsing</div>
                 </div>
-
             </div>
             <div class="section-image gallery-zigzag">
                 <img src="img/badmin.jpg" alt="Badminton">
@@ -110,27 +90,19 @@
             </div>
         </section>
 
-        <!-- Skills -->
         <section class="section fade-text">
             <div class="section-text">
                 <h2>Skills</h2>
                 <h3>Hard Skills</h3>
                 <div class="zigzag-container">
                     <div class="zigzag-box" onclick="window.open('https://www.w3schools.com/c/', '_blank')">💦 C</div>
-                    <div class="zigzag-box" onclick="window.open('https://www.w3schools.com/cpp/', '_blank')">⚡ C++
-                    </div>
-                    <div class="zigzag-box" onclick="window.open('https://www.w3schools.com/html/', '_blank')">🌐 HTML
-                    </div>
-                    <div class="zigzag-box" onclick="window.open('https://www.w3schools.com/css/', '_blank')">🎨 CSS
-                    </div>
-                    <div class="zigzag-box" onclick="window.open('https://www.w3schools.com/js/', '_blank')">📜
-                        JavaScript</div>
-                    <div class="zigzag-box" onclick="window.open('https://www.w3schools.com/bash/', '_blank')">🐧 Linux
-                    </div>
-                    <div class="zigzag-box" onclick="window.open('https://www.w3schools.com/sql/', '_blank')">🗃️ MySQL
-                    </div>
+                    <div class="zigzag-box" onclick="window.open('https://www.w3schools.com/cpp/', '_blank')">⚡ C++</div>
+                    <div class="zigzag-box" onclick="window.open('https://www.w3schools.com/html/', '_blank')">🌐 HTML</div>
+                    <div class="zigzag-box" onclick="window.open('https://www.w3schools.com/css/', '_blank')">🎨 CSS</div>
+                    <div class="zigzag-box" onclick="window.open('https://www.w3schools.com/js/', '_blank')">📜 JavaScript</div>
+                    <div class="zigzag-box" onclick="window.open('https://www.w3schools.com/bash/', '_blank')">🐧 Linux</div>
+                    <div class="zigzag-box" onclick="window.open('https://www.w3schools.com/sql/', '_blank')">🗃️ MySQL</div>
                 </div>
-
                 <h3>Soft Skills</h3>
                 <div class="zigzag-container">
                     <div class="zigzag-box">Time Management</div>
@@ -151,7 +123,6 @@
         </section>
     </main>
 
-    <!-- Navbar bawah -->
     <nav class="bottom-nav">
         <a href="index.html">Home</a>
         <a href="profile.html">Profile</a>
@@ -160,84 +131,7 @@
         <a href="tourist.html">Travel</a>
     </nav>
 
-    <!-- Clock + Animation -->
-    <script>
-        function updateClock() {
-            const now = new Date();
-            let h = String(now.getHours()).padStart(2, "0");
-            let m = String(now.getMinutes()).padStart(2, "0");
-            let s = String(now.getSeconds()).padStart(2, "0");
-            document.getElementById("clock").textContent = `${h}:${m}:${s}`;
-        }
-        setInterval(updateClock, 1000);
-        updateClock();
-
-        // Animasi fade saat scroll
-        const sections = document.querySelectorAll('.section');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show');
-                }
-            });
-        }, { threshold: 0.5 });
-
-        sections.forEach(sec => observer.observe(sec));
-
-        // Dark Mode toggle with localStorage
-        const toggleBtn = document.getElementById("darkToggle");
-        let darkMode = localStorage.getItem("dark-mode");
-
-        const enableDarkMode = () => {
-            document.body.classList.add("dark");
-            toggleBtn.checked = true; // switch ke kanan
-            localStorage.setItem("dark-mode", "enabled");
-        };
-
-        const disableDarkMode = () => {
-            document.body.classList.remove("dark");
-            toggleBtn.checked = false; // switch ke kiri
-            localStorage.setItem("dark-mode", "disabled");
-        };
-
-        // Set state saat page load
-        if (darkMode === "enabled") {
-            enableDarkMode();
-        } else {
-            disableDarkMode();
-        }
-
-        // Event listener
-        toggleBtn.addEventListener("change", () => {
-            if (toggleBtn.checked) {
-                enableDarkMode();
-            } else {
-                disableDarkMode();
-            }
-        });
-
-        // 🔥 Efek Spark Line pada klik
-        document.addEventListener("click", function (e) {
-            console.log("Clicked!"); // cek apakah listener hidup
-            for (let i = 0; i < 9; i++) { // jumlah garis
-                const spark = document.createElement("div");
-                spark.classList.add("spark");
-
-                spark.style.left = `${e.pageX}px`;
-                spark.style.top = `${e.pageY}px`;
-
-                const angle = (360 / 9) * i; // bagi rata 360°
-                const distance = Math.random() * 60 + 30; // variasi jarak
-
-                spark.style.setProperty("--angle", `${angle}deg`);
-                spark.style.setProperty("--distance", `${distance}px`);
-
-                document.body.appendChild(spark);
-
-                setTimeout(() => spark.remove(), 1000);
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
