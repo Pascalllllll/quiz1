@@ -48,14 +48,14 @@ body::before {
     filter: blur(0.2px);
 }
 
-/* EFEK VIGNETTE BARU */
+/* EFEK VIGNETTE */
 body::after {
     content: "";
     position: fixed;
     inset: 0;
     background: radial-gradient(ellipse at center, transparent 50%, rgba(0, 0, 0, 0.4) 125%);
     z-index: -1;
-    pointer-events: none; /* Memastikan vignette tidak menghalangi klik */
+    pointer-events: none;
 }
 
 @keyframes boxPop {
@@ -806,18 +806,18 @@ body.dark .source-text, body.dark .source-link { color: #fff; }
     }
     .section-text {
         text-align: center;
-        order: 1; /* Pastikan teks selalu di atas gambar di mode mobile */
+        order: 1;
         width: 100%;
         flex: none;
     }
     .section-image, .section-image-profile {
-        order: 2; /* Pastikan gambar di bawah teks */
+        order: 2;
         margin-top: 40px;
         width: 100%;
         flex: none;
     }
     .zigzag-container {
-        justify-content: center; /* Menengahkan box di layar kecil */
+        justify-content: center;
     }
 }
 
@@ -839,7 +839,8 @@ body.dark .source-text, body.dark .source-link { color: #fff; }
         font-size: 0.8rem;
     }
     .gallery-zigzag {
-        display: none; /* Sembunyikan galeri zig-zag di layar sangat kecil */
+        display: none;
     }
 }
+
 
