@@ -802,52 +802,44 @@ body.dark .source-text, body.dark .source-link { color: #fff; }
         flex-direction: column;
         text-align: center;
         padding: 40px 20px;
-        margin-top: 150px;
+        margin-top: 100px;
     }
-
     .section-text {
         text-align: center;
-        margin: 0 auto;
+        order: 1; /* Pastikan teks selalu di atas gambar di mode mobile */
+        width: 100%;
+        flex: none;
     }
-
-    .section-image { margin: 20px auto 0; }
-    .section-image.avatar-image { margin-top: -1000px; }
-    .section-image img { max-width: 220px; max-height: 220px; }
-    .gallery-zigzag { margin: 0 auto; }
-    .profile-sections { padding: 0 20px; }
-
-    .section.hometown {
-        flex-direction: column;
-        text-align: center;
-        padding: 40px 20px;
+    .section-image, .section-image-profile {
+        order: 2; /* Pastikan gambar di bawah teks */
+        margin-top: 40px;
+        width: 100%;
+        flex: none;
     }
-
-    .section.hometown .section-text {
-        text-align: center;
-        padding: 0;
+    .zigzag-container {
+        justify-content: center; /* Menengahkan box di layar kecil */
     }
-
-    .section.hometown .section-text h2 {
-        font-size: 1.8rem;
-        text-align: center;
-        margin-top: 70px;
-    }
-
-    .section.hometown .section-image { margin-top: 25px; }
-    .section.hometown .section-image img { max-width: 300px; }
 }
 
 @media (max-width: 600px) {
-    .section { margin-top: 120px; }
-    .section-text h2 { font-size: 2rem; }
-    .section-text p { font-size: 1rem; line-height: 1.6; }
-    .section-image img { max-width: 180px; max-height: 180px; }
-    .section-image.avatar-image { margin-top: -900px; }
-    .bottom-nav { padding: 12px 20px; gap: 18px; font-size: 0.8rem; }
-    .gallery-zigzag { opacity: 0; }
-
-    .section.hometown { padding: 30px 15px; }
-    .section.hometown .section-text h2 { font-size: 1.8rem; margin-top: 70px; }
-    .section.hometown .section-text p { font-size: 1rem; line-height: 1.6; }
-    .section.hometown .section-image img { max-width: 220px; }
+    .section {
+        margin-top: 80px;
+        padding: 40px 15px;
+    }
+    .section-text h2 {
+        font-size: 2rem;
+    }
+    .section-text p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    .bottom-nav {
+        padding: 8px 15px;
+        gap: 10px;
+        font-size: 0.8rem;
+    }
+    .gallery-zigzag {
+        display: none; /* Sembunyikan galeri zig-zag di layar sangat kecil */
+    }
 }
+
