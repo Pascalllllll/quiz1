@@ -270,6 +270,23 @@ body::after {
     transform: scale(1.1);
 }
 
+.section-image-profile {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.section-image-profile img {
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
 /* ========================
    Components
 ======================== */
@@ -914,4 +931,5 @@ body.dark .source-text, body.dark .source-link { color: #fff; }
     .section.hometown .section-text p { font-size: 1rem; line-height: 1.6; }
     .section.hometown .section-image img { max-width: 220px; }
 }
+
 
