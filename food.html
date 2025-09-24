@@ -7,50 +7,37 @@
     <title>Local Food - Hosea Felix Sanjaya</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="img/avatar.png">
-    <!-- Font and icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <!-- Header kanan atas -->
     <header class="top-right">
         <a href="https://www.instagram.com/hoseafelix_/" target="_blank"><i class="fab fa-instagram"></i></a>
         <a href="https://github.com/Pascalllllll" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/hosea-felix-sanjaya-3a9a0931b" target="_blank"><i
-                class="fab fa-linkedin"></i></a>
+        <a href="https://www.linkedin.com/in/hosea-felix-sanjaya-3a9a0931b" target="_blank"><i class="fab fa-linkedin"></i></a>
         <span id="clock"></span>
-        <!-- Tombol Dark Mode -->
         <label class="switch">
             <input type="checkbox" id="darkToggle">
             <span class="slider"></span>
         </label>
     </header>
 
-
-    <!-- Local Food Sections -->
     <main class="profile-sections">
-        <!-- Local Foods -->
         <section class="section fade-text">
             <div class="section-text">
-                <h2>Favorite <span class="highlight">Local
-                        Foods</span>
-                </h2>
-                <p>
-                    My favorite local foods so far...
-                </p>
+                <h2>Favorite <span class="highlight">Local Foods</span></h2>
+                <p>My favorite local foods so far...</p>
                 <div class="zigzag-container">
                     <div class="zigzag-box">🥞 Martabak</div>
                     <div class="zigzag-box">🍚 Nasi Goreng</div>
-                    <div class="zigzag-box">🍜 Mie Ayam</div><br>
+                    <div class="zigzag-box">🍜 Mie Ayam</div>
                     <div class="zigzag-box">🥣 Bakso</div>
                     <div class="zigzag-box">🍲 Soto Soup</div>
                     <div class="zigzag-box">🍢 Satay</div>
                 </div>
             </div>
-
-            <!-- Gallery -->
-            <div class="food-gallery food-image">
+            <div class="food-gallery">
                 <img src="img/martabak.jpg" alt="Martabak">
                 <img src="img/nasigoreng.jpg" alt="Nasi Goreng">
                 <img src="img/mieayam.jpg" alt="Mie Ayam">
@@ -60,14 +47,10 @@
             </div>
         </section>
 
-        <!-- Dream Foods -->
         <section class="section fade-text">
             <div class="section-text">
-                <h2>Dream <span class="highlight">Foods</span>
-                </h2>
-                <p>
-                    Here are some international dishes I dream of trying someday.
-                </p>
+                <h2>Dream <span class="highlight">Foods</span></h2>
+                <p>Here are some international dishes I dream of trying someday.</p>
                 <div class="zigzag-container">
                     <div class="zigzag-box">🍖 Tonkatsu</div>
                     <div class="zigzag-box">🍗 Turkey Leg</div>
@@ -77,8 +60,6 @@
                     <div class="zigzag-box">🥣 Borscht</div>
                 </div>
             </div>
-
-            <!-- Food Gallery -->
             <div class="section-image food-gallery1">
                 <img src="img/tonkatsu.jpg" alt="Tonkatsu">
                 <img src="img/turkeyleg.jpg" alt="Turkey Leg">
@@ -88,10 +69,8 @@
                 <img src="img/borscht.jpg" alt="Borscht">
             </div>
         </section>
-
     </main>
 
-    <!-- Bottom Navbar -->
     <nav class="bottom-nav">
         <a href="index.html">Home</a>
         <a href="profile.html">Profile</a>
@@ -100,84 +79,7 @@
         <a href="tourist.html">Travel</a>
     </nav>
 
-    <!-- Clock + Animation -->
-    <script>
-        function updateClock() {
-            const now = new Date();
-            let h = String(now.getHours()).padStart(2, "0");
-            let m = String(now.getMinutes()).padStart(2, "0");
-            let s = String(now.getSeconds()).padStart(2, "0");
-            document.getElementById("clock").textContent = `${h}:${m}:${s}`;
-        }
-        setInterval(updateClock, 1000);
-        updateClock();
-
-        // Scroll fade animation
-        const sections = document.querySelectorAll('.section');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show');
-                }
-            });
-        }, { threshold: 0.5 });
-
-        sections.forEach(sec => observer.observe(sec));
-
-        // Dark Mode toggle with localStorage
-        const toggleBtn = document.getElementById("darkToggle");
-        let darkMode = localStorage.getItem("dark-mode");
-
-        const enableDarkMode = () => {
-            document.body.classList.add("dark");
-            toggleBtn.checked = true; // switch ke kanan
-            localStorage.setItem("dark-mode", "enabled");
-        };
-
-        const disableDarkMode = () => {
-            document.body.classList.remove("dark");
-            toggleBtn.checked = false; // switch ke kiri
-            localStorage.setItem("dark-mode", "disabled");
-        };
-
-        // Set state saat page load
-        if (darkMode === "enabled") {
-            enableDarkMode();
-        } else {
-            disableDarkMode();
-        }
-
-        // Event listener
-        toggleBtn.addEventListener("change", () => {
-            if (toggleBtn.checked) {
-                enableDarkMode();
-            } else {
-                disableDarkMode();
-            }
-        });
-
-        // 🔥 Efek Spark Line pada klik
-        document.addEventListener("click", function (e) {
-            console.log("Clicked!"); // cek apakah listener hidup
-            for (let i = 0; i < 9; i++) { // jumlah garis
-                const spark = document.createElement("div");
-                spark.classList.add("spark");
-
-                spark.style.left = `${e.pageX}px`;
-                spark.style.top = `${e.pageY}px`;
-
-                const angle = (360 / 9) * i; // bagi rata 360°
-                const distance = Math.random() * 60 + 30; // variasi jarak
-
-                spark.style.setProperty("--angle", `${angle}deg`);
-                spark.style.setProperty("--distance", `${distance}px`);
-
-                document.body.appendChild(spark);
-
-                setTimeout(() => spark.remove(), 1000);
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
