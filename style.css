@@ -1,5 +1,5 @@
 /* ========================
-   RESET & BASE STYLES
+   BASE STYLES
 ======================== */
 html {
     overflow-y: scroll;
@@ -1251,3 +1251,4 @@ body.dark input:focus {
         color: black !important;
     }
 }
+
