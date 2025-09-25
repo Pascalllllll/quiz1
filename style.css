@@ -1138,19 +1138,6 @@ body.dark .source-link {
 /* ========================
    ACCESSIBILITY & FOCUS STYLES
 ======================== */
-/* Focus Styles */
-button:focus,
-a:focus,
-input:focus {
-    outline: 2px solid #f39c12;
-    outline-offset: 2px;
-}
-
-body.dark button:focus,
-body.dark a:focus,
-body.dark input:focus {
-    outline-color: #ff6dc2;
-}
 
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
@@ -1338,3 +1325,4 @@ body.dark .side-nav a.active {
 body.dark .side-nav a.active-click {
     background-color: #f3b95b;
 }
+
