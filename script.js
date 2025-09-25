@@ -107,3 +107,25 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+    // --- 5. Navigation Highlighting ---
+document.addEventListener("DOMContentLoaded", function () {
+    const navLinks = document.querySelectorAll('nav ul li a');
+    const sections = document.querySelectorAll('main .section');
+    const options = { threshold: 0.5 };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const id = entry.target.id;
+            const navLink = document.querySelector(`nav ul li a[href="#${id}"]`);
+            if (entry.isIntersecting) {
+                navLinks.forEach(link => link.classList.remove('active'));
+                if (navLink) navLink.classList.add('active');
+            }
+        });
+    }, options);
+    sections.forEach(section => {
+        if (section.id) {
+            observer.observe(section);
+        }
+    });
+});
